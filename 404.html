@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+    <section id="bottom">
+      <div class="left">
+        <section id="nav-bar">
+          <nav
+            class="navbar bg-color navbar-dark"
+            aria-label="Dark offcanvas navbar"
+          >
+            <div class="container-fluid">
+              <div>
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasNavbarDark"
+                  aria-controls="offcanvasNavbarDark"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <a class="navbar-brand" href="#">Standard</a>
+              </div>
+    
+              <div
+                class="offcanvas bg-color text-bg-dark offcanvas-start"
+                tabindex="-1"
+                id="offcanvasNavbarDark"
+                aria-labelledby="offcanvasNavbarDarkLabel"
+              >
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title " id="offcanvasNavbarDarkLabel">
+                    Calculator
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#"
+                        >Scientific</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#">Currency</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </section>
+        <section id="ndiv">
+          <div class="num-display">
+            <div class="question">
+              <span id="overwrite-question"></span>
+            </div>
+            <div class="result">
+              <span id="overwrite-result"></span>
+            </div>
+          </div>
+        </section>
+        <section id="buttons-div">
+          <button type="button" onclick="percent()" class="btn">%</button>
+          <button type="button" 
+          onclick="CE()"
+          class="btn">CE</button>
+          <button type="button" onclick="C()" class="btn">C</button>
+          <button type="button" onclick="backspace()" class="btn">
+            <img class="bsvg" src="./images/backspace.svg" alt="" />
+          </button>
+          <button type="button" onclick="onebyans()" class="btn">1/x</button>
+          <button type="button" onclick="anspower2()" class="btn">x <sup>2</sup></button>
+          <button type="button" onclick="sqrtofans()" class="btn"><sup></sup>√x</button>
+          <button type="button" onclick="addSign('/')" class="btn">/</button>
+          <button type="button" onclick="addNumToDisplay(7)" class="btn nums">7</button>
+          <button type="button" onclick="addNumToDisplay(8)" class="btn nums">8</button>
+          <button type="button" onclick="addNumToDisplay(9)" class="btn nums">9</button>
+          <button type="button"
+          onclick="addSign('*')"
+          class="btn">x</button>
+          <button type="button" onclick="addNumToDisplay(4)" class="btn nums">4</button>
+          <button type="button" onclick="addNumToDisplay(5)" class="btn nums">5</button>
+          <button type="button" onclick="addNumToDisplay(6)" class="btn nums">6</button>
+          <button type="button" class="btn" onclick="addSign('-')" >-</button>
+          <button type="button" onclick="addNumToDisplay(1)" class="btn nums">1</button>
+          <button type="button" onclick="addNumToDisplay(2)" class="btn nums">2</button>
+          <button type="button" onclick="addNumToDisplay(3)" class="btn nums">3</button>
+          <button type="button" onclick="addSign('+')" class="btn">+</button>
+          <button type="button" class="btn nums">
+            <sup>+</sup>/<sub>-</sub>
+          </button>
+          <button type="button" onclick="addNumToDisplay(0)" class="btn nums">0</button>
+          <button type="button" onclick="addNumToDisplay(10)" class="btn nums">.</button>
+          <button type="button" class="btn equal" onclick="calculate()">=</button>
+        </section>
+      </div>
+      <div class="right bg-color ">
+        <nav class="nav-bar bg-color ">
+          <div class="container-fluid ">
+            <div class="left-nav ">
+              <button
+                class="btn"
+                type="button"
+              >
+                <span>History</span>
+              </button>
+              <!-- <button
+                class="btn"
+                type="button"
+              >
+                <span>Memory</span>
+              </button> -->
+  
+            </div>
+          </div>  
+        </nav>
+        <div class="history">
+          <span id="last">
+            
+          </span>
+        </div>
+        <div class="delete">
+          <button onclick="bindelete()" class="btn">
+            <img id="bin"  src="./images/trashbin.svg" alt="">
+          </button>
+        </div>
+      </div>
+    </section>
+    <script src="./logic.js"></script>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"
+  ></script>
+</html>
